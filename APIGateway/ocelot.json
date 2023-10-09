@@ -1,0 +1,216 @@
+{
+    "GlobalConfiguration": {
+        "BaseUrl": "https://localhost:7128"
+    },
+    "Routes": [ //UserService
+        {
+            "UpstreamPathTemplate": "/gateway/UserService/register",
+            "UpstreamHttpMethod": [ "Post" ],
+            "DownstreamPathTemplate": "/api/user/register",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7030
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/UserService/update/{emailId}",
+            "UpstreamHttpMethod": [ "Put" ],
+            "DownstreamPathTemplate": "/api/user/update/{emailId}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7030
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/UserService/delete/{emailId}",
+            "UpstreamHttpMethod": [ "Delete" ],
+            "DownstreamPathTemplate": "/api/user/delete/{emailId}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7030
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/UserService/{emailId}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamPathTemplate": "/api/user/{emailId}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7030
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/UserService/upload-image/{emailId}",
+            "UpstreamHttpMethod": [ "Post" ],
+            "DownstreamPathTemplate": "/api/user/upload-image/{emailId}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7030
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/UserService/get-image/{emailId}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamPathTemplate": "/api/user/get-image/{emailId}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7030
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/UserService/delete-image/{emailId}",
+            "UpstreamHttpMethod": [ "Delete" ],
+            "DownstreamPathTemplate": "/api/user/delete-image/{emailId}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7030
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/UserService/send-user-data",
+            "UpstreamHttpMethod": [ "Post" ],
+            "DownstreamPathTemplate": "/api/user/send-user-data",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7030
+                }
+            ]
+        },
+        // CarInventoryService
+
+        {
+            "UpstreamPathTemplate": "/gateway/CarInventory/getall",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamPathTemplate": "/api/Inventory/",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7107
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/CarInventory/getbycarId/{carId}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamPathTemplate": "/api/Inventory/{carId}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7107
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/CarInventory/delete/{carId}",
+            "UpstreamHttpMethod": [ "Delete" ],
+            "DownstreamPathTemplate": "/api/Inventory/{carId}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7107
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/CarInventory/upload/",
+            "UpstreamHttpMethod": [ "Post" ],
+            "DownstreamPathTemplate": "/api/Inventory/",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7107
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/CarInventory/update/{carId}",
+            "UpstreamHttpMethod": [ "Put" ],
+            "DownstreamPathTemplate": "/api/Inventory/{carId}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7107
+                }
+            ]
+        },
+
+        //ReservationService
+        {
+            "UpstreamPathTemplate": "/gateway/Reservation/savereservation",
+            "UpstreamHttpMethod": [ "Post" ],
+            "DownstreamPathTemplate": "/api/Reservation/",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7264
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/Reservation/upcoming/{rentedByEmailid}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamPathTemplate": "/api/Reservation/upcoming/{rentedByEmailid}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7264
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/Reservation/past/{rentedByEmailid}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamPathTemplate": "/api/Reservation/past/{rentedByEmailid}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7264
+                }
+            ]
+        },
+        {
+            "UpstreamPathTemplate": "/gateway/Reservation/GetReservationById/{reservationId}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamPathTemplate": "/api/Reservation/{reservationId}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7264
+                }
+            ]
+        }
+
+    ]
+}

@@ -1,0 +1,47 @@
+<div class="login-container">
+    <div class="login-img">
+    </div>
+    <div class="login-form-container">
+        <!-- <span class="font-company">DriveEasy</span> -->
+        <!-- <span class="font-titel">Welcome back !</span> -->
+        <!-- <span class="font-genral">Welcome back you've been missed!</span> -->
+        <form #loginform="ngForm" (ngSubmit)="loginformsubmit(loginform)" class="login-form">
+
+            <label id="change4" class="font-genral my-3" for="loginemail">Email Id</label>
+            <input id="change5" style="margin-top: 4px !important;" ngModel #loginemail="ngModel" required class="mail-icon-input style-input my-3"
+                placeholder="username@domain.com" autocomplete="false" type="text"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="loginemail" name="loginemail">
+            <div *ngIf="loginemail.touched && loginemail.invalid">
+                <div *ngIf="loginemail.errors?.['required']">
+                    <span class="field-warn">*This field is required</span>
+                </div>
+                <div *ngIf="loginemail.errors?.['pattern']">
+                    <span class="field-warn">*Invalid Email pattern</span>
+                </div>
+            </div>
+
+            <label id="change6"  class="font-genral my-3" for="loginpassword">Password</label>
+            <input id="change7" style="margin-top: 4px !important;" #loginpassword="ngModel" ngModel required class="key-icon-input style-input my-3"
+                placeholder="Ex: Xza409191cz" autocomplete="false" type="password" id="loginpassword"
+                name="loginpassword" minlength="4">
+            <div *ngIf="loginpassword.touched && loginpassword.invalid">
+                <div *ngIf="loginpassword.errors?.['required']">
+                    <span class="field-warn">*This field is required</span>
+                </div>
+                <div *ngIf="loginpassword.errors?.['minlength']">
+                    <span class="field-warn">*Password must be 4 character long</span>
+                </div>
+            </div>
+            <!-- <div class="my-3"></div> -->
+
+            <a  style="float:right !important; margin-left: 160px; display: block;" class="font-genral my-3 primary-link"
+                routerLink="/forgot-password">Forgot Password</a>
+
+            <div *ngIf="loginErrorMsg"><span class="field-warn">{{loginErrorMsg}}</span></div>
+            
+            <button style="margin-left: 25%; margin-top: 10px !important;" [disabled]="loginform.invalid" class="login-btn my-3">Login</button>
+        </form>
+        <p class="font-genral">Not a Member? <a class="primary-link" routerLink="/register">Register now</a></p>
+
+    </div>
+</div>

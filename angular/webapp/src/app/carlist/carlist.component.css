@@ -1,0 +1,373 @@
+.search-background {
+  background-color: #ffffff;
+  width: 100%;
+  height: 130px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-section{
+ 
+  height: 60px;
+  border-radius: 10px;
+  width: 80%;
+  background-color:#dbe7e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+ 
+ 
+}
+.search-card{
+  height: 50px;
+  width: 25%;
+  background-color: rgb(255, 255, 255);
+ margin-left: 3px;
+  margin-right: 15px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+.search-card:hover{
+  border:2px solid black ;
+}
+.fromdate {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  height: 100%; /* Optional: Set a fixed height to the container if needed */
+}
+
+.fromdate p {
+  margin: 0; /* Remove default margin to ensure perfect alignment */
+  font-size: 15px;
+}
+.todate{
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  height: 100%; 
+}
+.todate p {
+  margin: 0; /* Remove default margin to ensure perfect alignment */
+  font-size: 15px;
+}
+.start-date-card{
+  height: 50px;
+  width: 19%;
+  
+  margin-right: 15px;
+  margin-left: 5px;
+}
+.startdate{
+  background-color: white;
+  text-decoration: none;
+  padding: 10px;
+  border: 0;
+  font-size: 15px;
+  height: 100%;
+}
+.startdate:hover{
+  border: 2px solid black;
+}
+.end-date-card{
+  height: 50px;
+  width: 19%;
+  background-color: transparent;
+  margin-right: 10px;
+  margin-left: 5px;
+  
+}
+.enddate{
+  background-color: white;
+  text-decoration: none;
+  padding: 10px;
+  border: 0;
+  font-size: 15px;
+  height: 100%;
+}
+.enddate:hover{
+  border: 2px solid black;
+}
+.centered-content {
+  text-align: center; /* Center the text horizontally within its container */
+}
+.search:hover{
+  background: linear-gradient(to left,#007bff,rgb(11, 17, 78) ); 
+}
+.searchbtn{
+  height: 50px;
+  width: 100px;
+  background-color: #007bff; 
+  margin-right: 6px;
+  padding-top: 4px;
+font-size: 15px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  color: white;
+  border: 0px;
+  border-radius: 5px;
+
+}
+.searchbtn:hover{
+  background: linear-gradient(to left,#007bff,rgb(11, 17, 78) ); 
+}
+/*main*/
+.left-section {
+    background-color: rgb(255, 255, 255);
+    
+}
+.left-section-card{
+  background-color: rgb(255, 255, 255);
+}
+.right-section {
+    background-color: #F7F9FF;
+    margin-left:10px ;
+}
+
+/*left section*/ 
+/**/
+/*left section nav and date*/
+
+
+/*left section filters*/
+.filter-heading-container {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 15px;
+  align-items: center;
+ 
+}
+.filterheading{
+  padding-top: 15px;
+}
+.clear-all {
+   
+  color: #020101; 
+  padding: 5px 10px; 
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+}
+.clear-all:hover{
+  background: linear-gradient(to left,#007bff,rgb(11, 17, 78) ); 
+  color: white;
+}
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  padding-bottom: 10px;
+}
+.filter-section-card h2{
+  margin-left: 30px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  padding: 0;
+
+}
+
+.checkbox-list label {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  
+}
+
+
+.checkbox-list input[type="checkbox"] {
+  margin-right: 5px;
+  
+}
+.checkbox{
+  padding-bottom: 15px;
+  margin-left: 20px;
+}
+
+/*right section*/
+/*right section car category*/
+.column-carcategory{ 
+background-color:#F7F9FF;
+  height: 70px;
+    margin: 5px;
+    border: none;
+    
+}
+.column-carcategory:hover{
+    border: 2px solid rgb(231, 222, 222);
+    
+}.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* This centers vertically too, if needed */
+  height: 100%; /* Ensure the content fills the card height */
+}
+.clicked-card {
+  background-color: #007bff; /* Bootstrap primary blue color */
+  color: white; /* Text color */
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+}
+
+.clicked-card:hover {
+  background: linear-gradient(to left,#007bff,rgb(11, 17, 78) ); 
+
+}
+.caricon {
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.cars {
+    height: 50px;
+    width: 50px;
+   
+}
+
+.caricon p {
+    margin-top: 0px; 
+}
+
+/*listcar*/
+/* CSS to style the car card */
+.car-card {
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 10px;
+  height: 200px;
+ 
+  /* Adjust card width as needed */
+}
+
+/* CSS for the card content layout */
+.car-content {
+  width: 100%;
+  margin-right: 10px;
+}
+
+/* CSS for the left section (car image) */
+.image-section {
+  text-align: center; /* Center the image horizontally */
+  
+}
+
+.card-image {
+  width: 100%;
+  margin-bottom: 0;
+  height: 200px /* Maintain image aspect ratio */
+}
+
+/* CSS for the right section (car details) */
+.card-detailsection {
+  position: relative;
+  padding: 10px; /* Add padding as desired */
+}
+
+.car-details {
+  display: flex;
+  margin-left: 20px;
+}
+
+.car-name,
+.car-model {
+  margin-top: 20px;
+  margin-right: 10px; /* Adjust the margin as needed for spacing */
+}
+.car-name {
+  font-weight: bold; /* Make the text bold */
+  font-size: 22px; /* Adjust the font size as needed */
+  color: #333; /* Set the text color to a desired value */
+  /* Add other text styles as needed, such as font-family, text-align, etc. */
+}
+.car-model{
+  font-size: 15px;
+  color: rgb(114, 123, 123);
+}
+.icon {
+  
+  width: 20px; /* Adjust the width as needed */
+  height: 20px; /* Adjust the height as needed */
+  margin-right: 10px; /* Adjust the margin as needed for spacing */
+}
+.tranmission {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.tranmission p{
+  margin-top: 10px;
+}
+.fuel {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+.fuel p{
+  margin-top: 10px;
+}
+.seater{
+  display: flex;
+  align-items: center;
+  
+}
+.seater p{
+  margin-top: 10px;
+}
+.row1 {
+  display: flex;
+    
+   
+  
+}
+.carlist-button{
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  text-align: right;
+  
+}
+.carlist-buttoncolor
+{
+background-color: #007bff;
+height: 40px;
+width: 100px;
+transition: background 0.3s; 
+}
+.carlist-buttoncolor:hover {
+  background: linear-gradient(to left,#007bff,rgb(11, 17, 78) ); /* Gradient from primary-blue to dark-blue */}
+.white-text-button {
+  color: white !important;
+}
+.bold-text {
+  font-weight: bold;
+}
+/* CSS for star rating */
+.rating {
+  font-size: 1.4rem; /* Adjust the size as needed */
+  color: #ffcc00; /* Adjust the color as needed */
+  padding-left:4px;
+}
+.price{
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.bold-text {
+  font-weight: bold;
+  font-size: 25px; /* You can adjust the font size to your preference */
+}
+
+.pagination-controls{
+  padding-top: 30px;
+  
+}
+
+#change2{
+  padding: 45px 10px;
+}
+
+

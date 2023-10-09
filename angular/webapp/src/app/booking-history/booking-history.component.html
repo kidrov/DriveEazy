@@ -1,0 +1,77 @@
+<mat-tab-group animationDuration="1000ms">
+  <mat-tab label="Upcoming Reservations">
+    <ng-container *ngIf="upcoming && upcoming.length > 0; else noUpcomingReservations">
+      <div *ngFor="let reservation of upcoming">
+        <div class="appointment-card">
+          <div class="appointment-container">
+            <!-- Part 1: Car Image -->
+            <div class="image-container">
+              <img class="appointment-image" [src]="reservation.carImage" alt="Car Image">
+            </div>
+
+            <!-- Part 2: Car Name, Fuel Type, and Car ID -->
+            <div class="details-container">
+              <div>{{ reservation.carName }}</div>
+              <div>Vehicle No: {{ reservation.carId }}</div>
+              <div>Fuel type: {{ reservation.fuel }}</div>
+            </div>
+
+            <!-- Part 3: Price Per Hour -->
+            <div class="price-container">
+              <div class="price">₹ {{ reservation.pricePerHour }}</div>
+            </div>
+
+            <!-- Part 4: Start Date and End Date -->
+            <div class="date-container">
+              <div>Start Date: {{ reservation.reservationStartDate | date: 'dd/MM/yyyy'}}</div>
+              <div>End Date: {{ reservation.reservationEndDate | date: 'dd/MM/yyyy'}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noUpcomingReservations>
+      <div>No upcoming reservations.</div>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Past Reservations">
+    <ng-container *ngIf="past && past.length > 0; else noPastReservations">
+      <div *ngFor="let reservation of past">
+        <div class="appointment-card">
+          <div class="appointment-container">
+            <!-- Part 1: Car Image -->
+            <div class="image-container">
+              <img class="appointment-image" [src]="reservation.carImage" alt="Car Image">
+            </div>
+
+            <!-- Part 2: Car Name, Fuel Type, and Car ID -->
+            <div class="details-container">
+              <div>{{ reservation.carName }}</div>
+              <div>Vehicle No: {{ reservation.carId }}</div>
+              <div>Fuel type: {{ reservation.fuel }}</div>
+            </div>
+
+            <!-- Part 3: Price Per Hour -->
+            <div class="price-container">
+              <div>₹ {{ reservation.pricePerHour }}</div>
+            </div>
+
+            <!-- Part 4: Start Date and End Date -->
+            <div class="date-container">
+              <div>Start Date: {{ reservation.reservationStartDate | date: 'dd/MM/yyyy' }}</div>
+              <div>End Date: {{ reservation.reservationEndDate | date: 'dd/MM/yyyy' }}</div>
+            </div>
+
+            <!-- Part 5: Review Button -->
+            <div class="review-button-container">
+              <button class="review-button" (click)="openReviewDialog(reservation)">Review your ride</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noPastReservations>
+      <div>No past reservations.</div>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

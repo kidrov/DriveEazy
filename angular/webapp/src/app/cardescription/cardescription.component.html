@@ -1,0 +1,148 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+        <div >
+                <div class="">
+                        <button (click)="showAckno(carDesc.carId)" type="button" style="position: relative; left: 1000px;top: 150px; background-color: #0d6efd; color: #fff; height: 50px;width: 160px;border-radius: 10px;">CHECK OUT</button>
+                </div>
+                <div class="header">
+                        <img src="{{'data:image/jpg;base64,' + carDesc.carImage}}" class="" alt="..."
+                                style="position: relative;top:20px ;right: 350px;">
+                </div>
+                <div class="Parent">
+                        <div class="child1">
+                                <h1 style="position:relative;left: 500px;bottom: 50px;font-family:cadson;">BRAND:</h1>
+                                <h1 style="position:relative;left: 500px;bottom: 50px;">CAR:</h1>
+                                <h1 style="position:relative;left: 500px;bottom: 50px;">REGISTRATION YEAR:</h1>
+                                <h1 style="position: relative;right: -80px;top: 50px;margin-bottom: 30px;">Hosted By:</h1>
+                                <h1 style="position: relative;right: -80px;top: 90px;">Car Description</h1>
+                                
+                                <h1 style="position:relative;left: 650px;bottom: 255px;">{{carDesc.carBrand}}
+                                        </h1>
+                                        <h1 style="position:relative;left: 650px;bottom:255px;">{{carDesc.carName}}</h1>
+                                        <h1 style="position:relative;left: 750px;bottom:255px;">{{carDesc.registrationYear}}</h1>
+                                <p style="position: relative;right: -80px; font-size: 15px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-style: italic;">
+                                        {{carDesc.carId}}, {{carDesc.city}}, {{carDesc.description}}</p>
+
+
+
+                                <div class="title2" style="position: relative;right: 110px;">
+                                        
+                                        <div style="margin-right: 160px; position: relative;left: 180px;">
+                                                <img src="assets/car-icons/sedan2.png" alt="">
+                                                <span class="card-text"></span> {{carDesc.carType}}</p>
+                                        </div>
+
+                                        <div style="margin-right: 160px; position:relative;left: 150px;">
+                                                <img src="assets/car-icons/gear1.png" alt="">
+                                                <p> {{carDesc.transmission}}</p>
+                                        </div>
+
+                                        <div style="position: relative; top: 120px;right: 300px;">
+                                                <img src="assets/car-icons/fuel.png" alt="">
+                                                <p> {{carDesc.fuel}} </p>
+                                        </div>
+
+                                        <div style="position: relative; top: 120px;right: 170px;">
+                                                <img src="assets/car-icons/Carseat.png" alt="">
+                                                <p> Seating Capacity: {{carDesc.seat}} </p>
+                                        </div>
+                                </div>
+
+
+
+                        </div>
+                        <h1 style="position:relative; bottom: 10px ;left : 120px; text-decoration: underline;">Rating & Reviews</h1>
+                        <div class="child2" style="position: relative;top: 200px;right:100px">
+                                <div class="scrollbar">
+                                        <p>{{carDesc.rating}} <i class="fa-solid fa-star"></i> (35 Ratings)</p>
+                                        <div *ngFor="let review of reviewlist">
+
+                                                <p class="type1"><img src="assets/car-icons/face.png" alt="">
+                                                <p> {{review.email}}</p>
+                                                <p>{{review.title}}</p>
+                                                <p> {{review.description}}</p>
+                                                <p></p>
+
+
+                                        </div>
+
+
+
+                                </div>
+                        </div>
+
+                </div>
+
+        </div>
+
+</body>
+
+
+
+</html> -->
+
+<div class="supar-container">
+        <div class="main-section">
+                <div class="main-first">
+                        <img class="car-img" src="{{'data:image/jpg;base64,' + carDesc.carImage}}" alt="Car">
+                        <span class="car-name"> {{carDesc.carBrand}} {{carDesc.carName}}</span>
+
+                </div>
+                <div class="main-middel">
+                        <span class="hosted-by"><strong>Hosted By :</strong> {{carDesc.ownerEmail}}</span>
+                        <span class="plate-number"><strong>Plate No. :</strong> {{carDesc.carId}}</span>
+                        <span class="plate-number"><strong>Registration year :</strong> {{registtrationDate |
+                                date:'y'}}</span>
+                        <span class="plate-number"><strong>Available in :</strong> {{carDesc.city}}</span>
+                        <span class="plate-number"><strong>Rent Per hour : </strong>{{carDesc.pricePerHour |
+                                currency:'INR'}}</span>
+
+
+                </div>
+                <div class="main-last">
+                        <button class="login-btn my-3 " (click)="showAckno(carDesc.carId)">Check Out</button>
+                </div>
+        </div>
+        <div class="section-specifications">
+                <div class="icon-div">
+                        <img class="div-icon" src="assets/car-icons/sedan2.png" alt="">
+                        <p> {{carDesc.carType}}</p>
+                </div>
+
+                <div class="icon-div">
+                        <img class="div-icon" src="assets/car-icons/gear1.png" alt="">
+                        <p> {{carDesc.transmission}}</p>
+                </div>
+
+                <div class="icon-div">
+                        <img class="div-icon" src="assets/car-icons/fuel.png" alt="">
+                        <p> {{carDesc.fuel}} </p>
+                </div>
+
+                <div class="icon-div">
+                        <img class="div-icon" src="assets/car-icons/Carseat.png" alt="">
+                        <p> Seating Capacity: {{carDesc.seat}} </p>
+                </div>
+
+        </div>
+        <h4 class="review-heading">What our customers had said about it:</h4>
+        <div class="review-box">
+                <div class="reviewCard" *ngFor="let review of reviewlist">
+                        <img class="card-img" src="assets/car-icons/face.png" alt="">
+                        <span class="card-text">{{review.email}}</span>
+                        <span class="card-text">{{review.title}}</span>
+                        <span class="card-text">{{review.description}}</span>
+
+                </div>
+
+        </div>
+</div>

@@ -1,0 +1,116 @@
+/* *{
+    border: 1px solid rgb(121, 241, 121);
+    background-color:rgba(121, 241, 121, 0.1) ;
+} */
+.booking-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 15px;
+    padding: 10px 40px;
+}
+.booking-upper-part{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    
+}
+.booking-upper-img-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.booking-upper-middel-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+}
+.booking-upper-last-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+
+
+}
+.booking-bottom-part{
+    display: flex;
+    flex-direction: row;
+}
+.booking-bottom-price-box{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    width: 60%;
+    padding: 15px 55px;
+}
+.price-summary-box{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.items{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.booking-upper-img{
+    width: 300px;
+    height: 200px;
+
+}
+.booking-heading{
+    padding-left: 30px;
+}
+.price-summary-titel{
+    padding-left: 15px;
+}
+.login-btn{
+    width: 129px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1rem 1rem;
+    background-color: rgb(13, 110, 253);
+    color: whitesmoke;
+    font-weight: 700;
+    font-size: 20px;
+}
+.booking-bottom-paynow-box{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pick-heading{
+    font-size:medium;
+    font-weight: 600;
+
+}
+.booking-heading{
+    font-size: large;
+    font-weight: 600;
+}
+.booking-upper-img-box-carname{
+    font-size: medium;
+    font-weight: 400;
+    margin-top: 15px;
+}
+.price-summary-titel{
+    font-size: medium;
+    font-weight: 600;
+}
+.add-border{
+    border: 1px solid rgb(158, 158, 158);
+    background-color: whitesmoke;
+    padding: 10px 10px;
+}
+.item-name{
+    font-style: italic;
+}
+.item-price{
+    font-weight: 500;
+}

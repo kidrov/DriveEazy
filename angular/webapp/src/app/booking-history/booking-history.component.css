@@ -1,0 +1,201 @@
+/* Customize background color of mat-card */
+.example-card {
+  width: 100%;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mat-tab-body-content:nth-child(1) .example-card {
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.appointment-container {
+  /* display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center; */
+  display: flex;
+  justify-content: space-between; /* Distribute items horizontally */
+  align-items: center;
+}
+
+.image-container {
+  flex-basis: 40%;
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.appointment-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.vehicle-number {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+
+.date-container {
+  display: flex;
+  flex-direction: column;  
+  flex-basis: 30%;
+  text-align: right;
+  align-items: flex-start;
+}
+
+.start-date,
+.end-date {
+  display: inline-block; /* Display the dates in a line */
+  margin-left: 5px;
+  /* display: flex;
+  
+  margin-left: -100px;  */
+}
+
+.start-date::before,
+.end-date::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #000;
+  margin-right: 8px;
+}
+
+.details-container {
+  display: grid;
+  grid-gap: 8px;
+}
+
+.date-container {
+  text-align: right;
+}
+
+.example-card {
+  background-color: #f6f6f6;
+}
+
+/* Make tab labels appear in bold */
+.mat-tab-label {
+  font-weight: bold;
+}
+
+/* Set different background color for upcoming appointments */
+.mat-tab-body-content:nth-child(1) .example-card {
+  background-color: lightblue;
+}
+
+/* Set different background color for past appointments */
+.mat-tab-body-content:nth-child(2) .example-card {
+  background-color: lightgreen;
+}
+
+.example-card {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* .appointment-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; */
+/* } */
+
+.image-container,
+.details-container,
+.date-container {
+  flex-basis: calc(50% - 10px);
+  margin: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.price-container{
+
+  flex-basis: calc(50% - 10px);
+  margin: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 50px;
+  margin-right: 10px;
+}
+.review-button-container {
+  /* flex-basis: calc(100% - 10px);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+  flex-basis: 30%;
+  text-align: right;
+  margin-right: 20px;
+   
+}
+
+.image-container {
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+
+.appointment-image {
+  width: 200px; /* Adjust the width to your desired value */
+  height: auto; /* Maintain the aspect ratio */
+  object-fit: cover;
+}
+
+.details-container {
+  flex: 1 1 auto;
+  flex-basis: 40%;
+}
+
+.date-container {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.appointment-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Styles for mat-tab-group */
+.mat-tab-group {
+  margin-top: 80px;
+}
+
+.mat-tab-label {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .example-card {
+    grid-template-columns: 1fr;
+  }
+
+  .image-container,
+  .details-container,
+  .price-container,
+  .date-container,
+  .review-button-container {
+    flex-basis: 100%;
+    margin: 10px;
+  }
+}

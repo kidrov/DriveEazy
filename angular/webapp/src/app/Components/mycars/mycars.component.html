@@ -1,0 +1,37 @@
+<div class="supar-container">
+    <div class="container-header">
+        <span class="container-titel">My Cars</span>
+        <button class="container-add-btn" routerLink="/addcar">&#43; Add Car</button>
+    </div>
+    <div class="car-container">
+
+
+        <div *ngFor="let car of allCarList">
+            <div class="my-car-card" *ngIf="car.ownerEmail==ownerEmail">
+                <div class="my-car-card-img-side" *ngIf="car.ownerEmail==ownerEmail">
+                    <span class="my-car-card-numberplate">{{car.carId}}</span>
+                    <img class="my-car-card-image" src="{{'data:image/jpg;base64,' + car.carImage}}"
+                        alt="{{ car.carBrand }}">
+                </div>
+                <div class="my-car-card-text-side" *ngIf="car.ownerEmail==ownerEmail">
+                    <span class="my-car-card-text-model">{{car.carBrand}} {{car.carName}}</span>
+                    <ul class="my-car-card-text-list">
+                        <li>City : {{car.city}}</li>
+                        <li>Fuel : {{car.fuel}}</li>
+                        <li>price/hr : {{car.pricePerHour}}</li>
+                        <li>Seats : {{car.seat}}</li>
+                        <li>Type : {{car.carType}}</li>
+
+
+                    </ul>
+                    <!-- <button class="my-car-card-text-edit-btn">Edit</button> -->
+                </div>
+            </div>
+        </div>
+
+        <h2 *ngIf="!isUserHaveCar">Add your car in few quick steps</h2>
+
+
+
+    </div>
+</div>

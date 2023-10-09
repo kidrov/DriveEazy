@@ -1,0 +1,31 @@
+<mat-toolbar id="change1" color="white" class="mat-elevation-z8">
+    <span class="drive-logo" (click)="redirectToHomePage()">
+        <mat-icon>car_rental</mat-icon>DriveEazy
+      </span>
+    <div class="space"></div>
+  
+    <!-- Display "Login" button if the user is not logged in -->
+    <ng-container *ngIf="isLoggedIn || isLoginPage ">
+      <a mat-button style="text-decoration: none;" routerLink="/login">Login</a>
+      <a mat-raised-button id="change3" class="style-btn" routerLink="/register">SignUp</a>
+    </ng-container>
+    <ng-container *ngIf="isLoggedIn || !isLoginPage">
+      <a mat-button (click)="logout()">Logout</a>
+
+
+    </ng-container>
+      
+    
+    <!-- Display the "More Vert" (three dots) container and Logout button for logged-in users -->
+    <ng-container *ngIf="isLoggedIn || !isLoginPage">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon button with a horizontal three-dot icon">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/profile" >Profile</button>
+        <button mat-menu-item routerLink="/mycars">My Cars</button>
+        <button mat-menu-item routerLink="/booking">Reservations</button>
+      </mat-menu>
+    </ng-container>
+  </mat-toolbar>
+  

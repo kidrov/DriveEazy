@@ -1,0 +1,127 @@
+<div class="profile-container">
+  <h1 class="page-title">Personal Information</h1>
+  <div class="my-cars-button">
+    <button class="btn btn-primary edit-button" (click)="navigateToMyCarsPage()">
+      Go To My Cars <mat-icon class="pt-1">arrow_forward</mat-icon>
+    </button>
+  </div>
+  <div class="container">
+    <div class="main-body">
+      <div class="row gutters-sm">
+        <div class="col-md-4 mb-3">
+          <div class="card" style="border: none;">
+            <div class="card-body">
+              <div class="d-flex flex-column align-items-center text-center">
+                <!-- Display the user's profile image -->
+                <img [src]="'data:image/jpeg;base64,' + userProfile.imageData" alt="User Profile" class="rounded-circle"
+                  width="150">
+                <!-- Button to trigger file input -->
+                <input type="file" accept="image/jpeg, image/jpg, image/png" (change)="onImageSelected($event)"
+                  style="display: none;" #fileInput />
+                <button mat-icon-button (click)="fileInput.click()">
+                  <mat-icon style="font-size: 54px; width: 54px; height: 54px;">cloud_upload</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card d-flex justify-content-center my-5" style="border: none;">
+            <div class="card-body">
+              <!-- Display user information when neither form is active -->
+              <div *ngIf="!isEditingProfile && !isChangingPassword">
+                <div class="row details-box">
+                  <div class="col-sm-3">
+                    <h2 class="mb-0" style="font-size: 25px; font-weight: bold;">Name:</h2>
+                  </div>
+                  <div class="col-sm-9 text-secondary my-1" style="color: black;font-size: 28px;">
+                    {{ userProfile.userName }}
+                  </div>
+                </div>
+                <div class="row details-box my-4">
+                  <div class="col-sm-3">
+                    <h2 class="mb-0" style="font-size: 25px; font-weight: bold;">Email:</h2>
+                  </div>
+                  <div class="col-sm-9 text-secondary my-1" style="color: black;font-size: 28px;">
+                    {{ userProfile.emailId }}
+                  </div>
+                </div>
+                <div class="row details-box">
+                  <div class="col-sm-3">
+                    <h2 style="font-size: 25px; width: max-content; font-weight: bold;">Mobile No:</h2>
+                  </div>
+                  <div class="col-sm-9 text-secondary my-1" style="color: black; font-size: 28px;">
+                    {{ userProfile.phoneNo }}
+                  </div>
+                </div>
+
+                <!-- Buttons to switch between forms -->
+                <div class="my-4">
+                  <button class="btn btn-primary" (click)="toggleEditMode()">
+                    Edit Details <mat-icon class="pt-1">edit</mat-icon>
+                  </button>
+                  <button class="btn btn-primary mx-4" (click)="togglePasswordChange()">
+                    Change Password <mat-icon class="pt-1">edit</mat-icon>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Display Edit Details Form when isEditingProfile is true -->
+              <div *ngIf="isEditingProfile">
+                <!-- Input fields for editing -->
+                <div class="form-group">
+                  <label for="userName" style="font-size: 18px; font-weight: bold;">Full Name</label>
+                  <input type="text" class="form-control" id="userName" [(ngModel)]="editedUser.userName"
+                    name="userName">
+                </div>
+                <div style="margin-top: 20px;"></div>
+                <div class="form-group">
+                  <label for="phoneNo" style="font-size: 18px; font-weight: bold;">Mobile</label>
+                  <input type="text" class="form-control" id="phoneNo" [(ngModel)]="editedUser.phoneNo" name="phoneNo">
+                </div>
+                <div style="margin-top: 15px;"></div>
+                <button class="btn btn-success my-3" (click)="updateProfile()">Save Changes</button>
+                <button class="btn btn-secondary mx-3" (click)="toggleEditMode()">Cancel</button>
+              </div>
+
+              <!-- Display Change Password Form when isChangingPassword is true -->
+              <div *ngIf="isChangingPassword">
+                <!-- Password change form -->
+                <div class="form-group">
+                  <label for="oldPassword" style="font-size: 18px; font-weight: bold;">Old Password:</label>
+                  <div class="input-group">
+                    <input type="{{ (passwordInputType.oldPassword === 'text') ? 'text' : 'password' }}" class="form-control"
+                      id="oldPassword" [(ngModel)]="passwordChangeData.oldPassword" name="oldPassword">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button"
+                        (click)="passwordInputType.oldPassword = (passwordInputType.oldPassword === 'text') ? 'password' : 'text'">
+                        <i class="fa" [ngClass]="{'fa-eye': passwordInputType.oldPassword === 'password', 'fa-eye-slash': passwordInputType.oldPassword === 'text'}"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-top: 20px;"></div>
+                <div class="form-group">
+                  <label for="newPassword" style="font-size: 18px; font-weight: bold;">New Password:</label>
+                  <div class="input-group">
+                    <input type="{{ (passwordInputType.newPassword === 'text') ? 'text' : 'password' }}" class="form-control"
+                      id="newPassword" [(ngModel)]="passwordChangeData.newPassword" name="newPassword">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button"
+                        (click)="passwordInputType.newPassword = (passwordInputType.newPassword === 'text') ? 'password' : 'text'">
+                        <i class="fa" [ngClass]="{'fa-eye': passwordInputType.newPassword === 'password', 'fa-eye-slash': passwordInputType.newPassword === 'text'}"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-top: 15px;"></div>
+                <button class="btn btn-success my-3" (click)="changePassword()">Change Password</button>
+                <button class="btn btn-secondary mx-3" (click)="togglePasswordChange()">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

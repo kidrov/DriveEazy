@@ -1,0 +1,33 @@
+<div class="fp-body">
+
+    <div class="fp-form-box">
+        <span class="font-titel">Verification</span>
+        <form #verificationform="ngForm" (ngSubmit)="otpverificationformsubmit(verificationform)"
+            class="verification-form">
+
+            <label class="font-genral my-3" for="verificationotp">Enter Your OTP.</label><br>
+            <input ngModel #verificationotp="ngModel" required class="style-input my-3" placeholder="___ ___ ___ ___"
+                autocomplete="false" id="verificationotp" name="verificationotp"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                type="number" maxlength="4" minlength="4">
+            <div *ngIf="verificationotp.touched && verificationotp.invalid">
+                <div *ngIf="verificationotp.errors?.['required']">
+                    <span class="field-warn">*This field is required</span>
+                </div>
+                <div *ngIf="verificationotp.errors?.['minlength']">
+                    <span class="field-warn">*Plase provide your 4 digit otp pin</span>
+                </div>
+            </div>
+            <br><br>
+            <p id="change1" class="font-genral">If you didn't receive a code <a class="primary-link" routerLink="/register">
+                    Resend</a></p>
+            <div *ngIf="otpverificationfailedmsg"><span class="field-warn">{{otpverificationfailedmsg}}</span></div>
+
+            <button class="login-btn my-3 " [disabled]="verificationform.invalid">Verify</button>
+        </form>
+        <p class="font-genral">Do you have an account?<a class="primary-link" routerLink="/login">
+            Back to Login</a></p>
+
+    </div>
+
+</div>

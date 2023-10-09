@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="center-container col-6">
+    <div class="registration-container">
+      <form class="registration-form" #registrationForm="ngForm" (ngSubmit)="registerUser()">
+        <div class="registration-title">Registration</div>
+        <mat-form-field class="registration-input" #usernameField="matFormField">
+          <mat-label>Name</mat-label>
+          <input type="text" matInput [formControl]="usernameFormControl" [errorStateMatcher]="matcher"
+            placeholder="Enter your username" required>
+          <mat-error
+            *ngIf="usernameFormControl?.hasError('required') && (usernameFormControl?.touched || usernameFormControl?.dirty)">Username
+            is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="registration-input" #emailField="matFormField">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+            placeholder="Ex. pat@example.com" required>
+          <mat-error
+            *ngIf="emailFormControl?.hasError('email') && (emailFormControl?.touched || emailFormControl?.dirty)">Please
+            enter a valid email address</mat-error>
+          <mat-error
+            *ngIf="emailFormControl?.hasError('required') && (emailFormControl?.touched || emailFormControl?.dirty)">Email
+            is <strong>required</strong></mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="registration-input" #passwordField="matFormField">
+          <mat-label>Password</mat-label>
+          <input type="{{ hidePassword ? 'password' : 'text' }}" matInput [formControl]="passwordFormControl"
+            [errorStateMatcher]="matcher">
+
+          <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+            <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-error
+            *ngIf="passwordFormControl?.hasError('required') && (passwordFormControl?.touched || passwordFormControl?.dirty)">Password
+            is <strong>required</strong></mat-error>
+          <mat-error
+            *ngIf="passwordFormControl?.hasError('minlength') && (passwordFormControl?.touched || passwordFormControl?.dirty)">Password
+            must be at least 8 characters long</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="registration-input" #confirmPasswordField="matFormField">
+          <mat-label>Confirm Password</mat-label>
+          <input type="{{ hideConfirmPassword ? 'password' : 'text' }}" matInput
+            [formControl]="confirmPasswordFormControl" [errorStateMatcher]="matcher">
+
+          <button mat-icon-button matSuffix (click)="hideConfirmPassword = !hideConfirmPassword">
+            <mat-icon>{{ hideConfirmPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+          <mat-error
+            *ngIf="confirmPasswordFormControl?.hasError('required') && (confirmPasswordFormControl?.touched || confirmPasswordFormControl?.dirty)">Confirm
+            Password is <strong>required</strong></mat-error>
+        </mat-form-field>
+      </form>
+      <div class="registration-buttons">
+        <button mat-flat-button color="blue" type="submit" (click)="submitButton()">Register</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="image-cards-container col-4" style="align-items: right;">
+    <img src="assets/images/car_white_bg_img_unmarked.jpg" alt="Image">
+  </div>
+</div>

@@ -1,0 +1,61 @@
+.heading{
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+  .main-container{
+    background-color:#eef6ee;width:80%;text-align:center;padding:2px;margin:10px auto;
+    height:530px;
+  }
+  .container{
+    padding: 30px;
+
+  }
+  .styled-form-group {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .label-width {
+    width: 100px;
+    padding-right: 10px;
+    text-align: right;
+  }
+  
+  .input-width {
+    flex: 1;
+    width: auto;
+  }
+  .row{
+    padding-bottom: 20px;
+  }
+  .transmission{
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    height: 40px;
+    border: 0;
+  }
+  .rating{
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    height: 40px;
+    border: 0;
+  }
+
+.fuel{
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    height: 40px;
+    border: 0;
+}
+.Type{
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    height: 40px;
+    border: 0;
+}
+.error-message {
+    color: red; /* Set the desired error message color */
+    font-size: 12px; /* Adjust the font size as needed */
+    margin-top: 5px; /* Add margin to separate it from the input box */
+  }

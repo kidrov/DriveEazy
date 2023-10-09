@@ -1,0 +1,127 @@
+.profile-container {
+    padding: 20px; 
+    margin-top: 50px; /* Add space from the top */
+    /* width:100% */
+  }
+
+  /* Define a custom width for the container */
+.container {
+    max-width: 1800px; 
+    /* margin: 0 auto;   */
+    padding: 0;
+  }
+  
+
+  /* .card {
+    height: 190px;
+  } */
+  .card-body .d-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* height: 190px; */
+  }
+
+  .card-body img {
+    width: 240px; /* Increase the width of the profile avatar */
+    height: 240px; /* Increase the height of the profile avatar */
+  }
+  
+
+/* Style the button container */
+.button-container {
+    text-align: center;
+    margin-top: 20px; /* Add space above the buttons */
+  }
+  
+  /* Style the Edit Profile button */
+  .btn-edit-profile {
+    background-color: #808080; /* Gray background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove the border */
+    padding: 10px 20px; /* Add some padding */
+    text-decoration: none; /* Remove underlines */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    margin-right: 10px; /* Add some spacing to the right of the button */
+    border-radius: 5px; /* Add rounded corners */
+    width: 150px;
+    
+  }
+  
+  /* Style the My Cars button */
+  .btn-my-cars {
+    background-color: grey; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove the border */
+    padding: 10px 20px; /* Add some padding */
+    text-decoration: none; /* Remove underlines */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    border-radius: 5px; /* Add rounded corners */
+    margin-left: 50px;
+    width: 100px;
+    max-height: 40px;
+  }
+  
+  /* Style the Edit Profile button on hover */
+  .btn-edit-profile:hover {
+    background-color: #606060; /* Darker gray background color on hover */
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  }
+  
+  /* Style the My Cars button on hover */
+  .btn-my-cars:hover {
+     background-color: #303030;  /* Darker blue background color on hover */
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  }
+
+  .my-cars-button {
+    position: absolute;
+    top: 0;
+    right: 5px; /* Adjust the value to position it where you prefer */
+    margin-top: 72px;
+    padding: 1rem 1rem;
+    
+  }
+  
+  .my-cars-button button {
+    font-size: 16px; /* Adjust the font size to decrease the button's size */
+    white-space: nowrap;
+  }
+  
+  .page-title {
+    margin-top: -45px; /* Adjust the top margin as needed */
+    margin-left: 20px; /* Adjust the left margin as needed */
+    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: bold; /* Optionally, set the font weight to bold */
+  }
+  
+  .profile-container .card-body .row:last-child {
+    margin-bottom: 0;
+  }
+
+  .profile-container .card-body .row .col-sm-9.text-secondary {
+    font-size: 28px;
+    color: black;
+  }
+  
+  /* Increase font size and make text bold for form labels */
+.form-label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Increase font size and make text bold for input fields */
+.form-control {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Adjust the font size and make text bold for buttons as needed */
+.btn {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+  
+  

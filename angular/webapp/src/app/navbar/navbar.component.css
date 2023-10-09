@@ -1,0 +1,23 @@
+.space{
+    flex: 1 1 auto
+}
+.drive-logo{
+    cursor: pointer;
+}
+.style-btn{
+    width: 105px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1.2rem 1rem;
+    background-color: rgb(13, 110, 253);
+    color: whitesmoke;
+    font-size: 15px;
+    text-decoration: none;
+}
+#change1{
+    background-color: #dbe7e7;
+}
+#change3{
+    background-color:rgb(13, 110, 253);
+    color: white ;
+}

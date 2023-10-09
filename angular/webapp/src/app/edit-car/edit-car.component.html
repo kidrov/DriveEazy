@@ -1,0 +1,198 @@
+<div class="heading">
+  <h1>Edit Car</h1>
+  
+</div>
+<div class="main-container">
+ <div class="container">
+  <div class="row">
+    
+    <div class="col-md-4">
+      <div class="form-group styled-form-group">
+        <label for="ownerEmail" class="label-width">Owner Email:</label>
+        <input type="email" class="form-control input-width" id="ownerEmail" [(ngModel)]="ownerEmail" name="ownerEmail">
+      </div>
+      
+    </div>
+    <div class="col-md-4">
+      <div class="form-group styled-form-group">
+        <label for="registrationYear" class="label-width">Registration Year:</label>
+        <input type="text"
+          class="form-control input-width"
+          id="registrationYear"
+          [(ngModel)]="registrationYear"
+          name="registrationYear"
+          required
+          pattern="\d{4}-\d{2}-\d{2}" 
+          #registrationYearInput="ngModel"
+        >
+        <div *ngIf="registrationYearInput.invalid && (registrationYearInput.dirty || registrationYearInput.touched)" class="error-message">
+          <div *ngIf="registrationYearInput.hasError('required')">Registration Year is required.</div>
+          <div *ngIf="registrationYearInput.hasError('pattern')">Invalid date format (yyyy-mm-dd).</div>
+        </div>
+      </div>
+    </div>
+    
+
+    
+  </div>
+  
+ 
+  
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group styled-form-group">
+        <label for="carBrand" class="label-width">Car Brand:</label>
+        <input
+          placeholder="Abcd"
+          type="text"
+          class="form-control input-width"
+          id="carBrand"
+          [(ngModel)]="carBrand"
+          name="carBrand"
+          required
+          #carBrandInput="ngModel"
+        >
+        <div *ngIf="carBrandInput.invalid && (carBrandInput.dirty || carBrandInput.touched)" class="error-message">
+          <div *ngIf="carBrandInput.hasError('required')">Car Brand is required.</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="form-group styled-form-group">
+        <label for="carType" class="label-width">Car Type:</label>
+        <select
+          class="Type"
+          name="carType"
+          id="carType"
+          [(ngModel)]="carType"
+          required
+          #carTypeInput="ngModel"
+        >
+          <option value="Sedan">Sedan</option>
+          <option value="SUV">SUV</option>
+          <option value="Hatchback">Hatchback</option>
+          <option value="Other">Other</option>
+        </select>
+        <div *ngIf="carTypeInput.invalid && (carTypeInput.dirty || carTypeInput.touched)" class="error-message">
+          <div *ngIf="carTypeInput.hasError('required')">Car Type is required.</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="form-group styled-form-group">
+        <label for="carName" class="label-width">Car Name:</label>
+        <input placeholder="Abcd" type="text" class="form-control input-width" id="carName" [(ngModel)]="carName" name="carName" required #carNameInput="ngModel">
+        <div *ngIf="carNameInput.invalid && (carNameInput.dirty || carNameInput.touched)" class="error-message">
+          <div *ngIf="carNameInput.hasError('required')">Car Name is required.</div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group styled-form-group">
+        <label for="transmission" class="label-width">Transmission:</label>
+        <select class="transmission" name="transmission" id="transmission" [(ngModel)]="transmission" required #transmissionInput="ngModel">
+          <option value="Automatic">Automatic</option>
+          <option value="Manual">Manual</option>
+        </select>
+        <div *ngIf="transmissionInput.invalid && (transmissionInput.dirty || transmissionInput.touched)" class="error-message">
+          <div *ngIf="transmissionInput.hasError('required')">Transmission is required.</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="form-group styled-form-group">
+        <label for="fuel" class="label-width">Fuel Type:</label>
+        <select class="fuel" name="fuel" id="fuel" [(ngModel)]="fuel" required #fuelInput="ngModel">
+          <option value="Petrol">Petrol</option>
+          <option value="Diesel">Diesel</option>
+          <option value="Electric">Electric</option>
+          <option value="Hybrid">Hybrid</option>
+        </select>
+        <div *ngIf="fuelInput.invalid && (fuelInput.dirty || fuelInput.touched)" class="error-message">
+          <div *ngIf="fuelInput.hasError('required')">Fuel Type is required.</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="form-group styled-form-group">
+        <label for="seat" class="label-width">Number of Seats:</label>
+        <input type="number" class="form-control input-width" id="seat" [(ngModel)]="seat" name="seat">
+     
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group styled-form-group">
+        <label for="pricePerHour" class="label-width">Price per Hour:</label>
+        <input type="number" class="form-control input-width" id="pricePerHour" [(ngModel)]="pricePerHour" name="pricePerHour">
+      
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group styled-form-group">
+        <label for="city" class="label-width">City:</label>
+        <input
+          placeholder="Abcd"
+          type="text"
+          class="form-control input-width"
+          id="city"
+          [(ngModel)]="city"
+          name="city"
+          required
+          #cityInput="ngModel"
+        >
+        <div *ngIf="cityInput.invalid && (cityInput.dirty || cityInput.touched)" class="error-message">
+          <div *ngIf="cityInput.hasError('required')">City is required.</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="form-group styled-form-group">
+        <label for="rating" class="label-width">Rating:</label>
+        <select class="rating" name="rating" id="rating" [(ngModel)]="rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group styled-form-group">
+        <label for="carImage" class="label-width">Car Image:</label>
+        <input type="file" class="form-control input-width" id="carImage" (change)="onFileChange($event)" name="carImage" accept=".jpg, .jpeg, .png" required>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group styled-form-group">
+        <label for="description" class="label-width">Description:</label>
+        <textarea class="form-control input-width" id="description" [(ngModel)]="description" name="description" rows="3" required></textarea>
+      </div>
+    </div>
+  </div>
+  <button mat-raised-button style="background-color: #007bff;" (click)="onSubmit()">Update</button>
+        </div>
+</div>
+
+
+
+
+
+
+
+
